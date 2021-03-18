@@ -54,10 +54,9 @@ window.countNRooksSolutions = function(n) {
   var solutionCount = 0;
   var board = new Board({n: n});
   // increment solutionCount after each valid solution
-
   // TODO: Need to improve run time for this.
-  // Previous runtime -> Exceed 2000ms
-  // Current runtime -> ~400ms
+  // Previous runtime -> Exceed 2000ms (reused findRookSolution)
+  // Current runtime -> ~400ms (inner recursion)
   var countValid = function(row = 0) {
     // reached the end of board
     if (row === n) {
